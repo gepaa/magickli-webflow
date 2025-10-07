@@ -233,11 +233,56 @@ mobilevideo.setAttribute("muted", "");
   <!--  END: Mobile Autoplay Video  -->
   <script src="https://cdn.jsdelivr.net/npm/jquery.ripples@0.6.3/dist/jquery.ripples.min.js"></script>
   <script>
-$('#ripple').ripples({
-	resolution: 512,
-	dropRadius: 20,
-	perturbance: 0.01,
-});
+// Enhanced fluid distortion effect
+try {
+  $('#ripple').ripples({
+    resolution: 768,
+    dropRadius: 25,
+    perturbance: 0.04,
+    interactive: true,
+    crossOrigin: ''
+  });
+
+  // Add automatic fluid motion
+  setInterval(function() {
+    var $el = $('#ripple');
+    var x = Math.random() * $el.outerWidth();
+    var y = Math.random() * $el.outerHeight();
+    var dropRadius = 20 + Math.random() * 30;
+    var strength = 0.03 + Math.random() * 0.04;
+
+    $el.ripples('drop', x, y, dropRadius, strength);
+  }, 1200);
+
+  // Enhanced mouse interaction
+  var $ripple = $('#ripple');
+  var isMouseDown = false;
+
+  $ripple.on('mousemove', function(e) {
+    var rect = this.getBoundingClientRect();
+    var x = e.clientX - rect.left;
+    var y = e.clientY - rect.top;
+
+    if (isMouseDown) {
+      $ripple.ripples('drop', x, y, 15, 0.02);
+    }
+  });
+
+  $ripple.on('mousedown', function(e) {
+    isMouseDown = true;
+    var rect = this.getBoundingClientRect();
+    var x = e.clientX - rect.left;
+    var y = e.clientY - rect.top;
+    $ripple.ripples('drop', x, y, 30, 0.05);
+  });
+
+  $ripple.on('mouseup mouseleave', function() {
+    isMouseDown = false;
+  });
+
+} catch(e) {
+  console.log('Ripples effect not supported');
+}
 </script>
   <!--  Google Tag Manager (noscript)  -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KH2NMXC6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>

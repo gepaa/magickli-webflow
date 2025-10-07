@@ -327,9 +327,10 @@ figcaption {
   opacity: 1;
   color: var(--white);
   margin-bottom: 10px;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 400;
-  line-height: 34px;
+  line-height: 36px;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
 }
 
 .paragraph-bigger.cc-bigger-light {
@@ -553,9 +554,10 @@ figcaption {
   margin-top: 10px;
   margin-bottom: 10px;
   font-family: Noto Serif Display, sans-serif;
-  font-size: 48px;
-  font-weight: 400;
-  line-height: 54px;
+  font-size: 56px;
+  font-weight: 500;
+  line-height: 64px;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.7);
 }
 
 .title-small {
@@ -565,9 +567,10 @@ figcaption {
   margin-top: 10px;
   margin-bottom: 15px;
   font-family: Noto Serif Display, sans-serif;
-  font-size: 36px;
-  font-weight: 400;
-  line-height: 50px;
+  font-size: 44px;
+  font-weight: 500;
+  line-height: 58px;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
 }
 
 .title-small.center {
@@ -1360,11 +1363,11 @@ figcaption {
 
 .quote-agt {
   opacity: 1;
-  margin-bottom: 10px;
-  font-size: 20px;
+  margin-bottom: 15px;
+  font-size: 28px;
   font-style: italic;
-  font-weight: 400;
-  line-height: 30px;
+  font-weight: 500;
+  line-height: 42px;
 }
 
 .sectionbackground {
@@ -2776,6 +2779,7 @@ figcaption {
   height: 1200px;
   position: absolute;
   inset: 11% 0% 0% 42%;
+  animation: flareFloat 15s ease-in-out infinite;
 }
 
 .orange-pop.black {
@@ -2804,6 +2808,8 @@ figcaption {
   height: 600px;
   top: 0%;
   left: -16%;
+  animation: flareFloat2 12s ease-in-out infinite;
+  animation-delay: -3s;
 }
 
 .orange-pop._03 {
@@ -2812,6 +2818,8 @@ figcaption {
   height: 600px;
   top: 0%;
   left: -23%;
+  animation: flareFloat3 18s ease-in-out infinite;
+  animation-delay: -6s;
 }
 
 .orange-pop._04 {
@@ -2826,6 +2834,8 @@ figcaption {
   height: 600px;
   top: 9%;
   left: 78%;
+  animation: flareFloat2 14s ease-in-out infinite;
+  animation-delay: -7s;
 }
 
 .orange-pop._07 {
@@ -2834,6 +2844,8 @@ figcaption {
   height: 600px;
   top: 15%;
   left: -26%;
+  animation: flareFloat3 16s ease-in-out infinite;
+  animation-delay: -4s;
 }
 
 .orange-pop._08 {
@@ -2859,6 +2871,8 @@ figcaption {
   height: 800px;
   position: fixed;
   left: 83%;
+  animation: flareFloat 20s ease-in-out infinite;
+  animation-delay: -10s;
 }
 
 .orange-pop._12, .paragraph.swipetoview {
@@ -3834,8 +3848,8 @@ figcaption {
   }
 
   .paragraph-bigger {
-    font-size: 18px;
-    line-height: 28px;
+    font-size: 20px;
+    line-height: 32px;
   }
 
   .paragraph-bigger.presshero, .paragraph-bigger.figurine {
@@ -3849,18 +3863,18 @@ figcaption {
   }
 
   .title {
-    font-size: 48px;
-    line-height: 54px;
+    font-size: 52px;
+    line-height: 58px;
   }
 
   .title.hero {
-    font-size: 36px;
-    line-height: 42px;
+    font-size: 40px;
+    line-height: 48px;
   }
 
   .title-small {
-    font-size: 30px;
-    line-height: 36px;
+    font-size: 36px;
+    line-height: 44px;
   }
 
   .logo-link {
@@ -3961,8 +3975,8 @@ figcaption {
   }
 
   .quote-agt {
-    font-size: 16px;
-    line-height: 28px;
+    font-size: 22px;
+    line-height: 34px;
   }
 
   .sectionbackground.figurine {
@@ -4141,7 +4155,8 @@ figcaption {
   }
 
   .paragraph-bigger {
-    font-size: 16px;
+    font-size: 18px;
+    line-height: 30px;
   }
 
   .paragraph-bigger.reviewertitle {
@@ -4328,4 +4343,203 @@ figcaption {
   }
 }
 
+/* Custom styles for hero Watch Trailer button */
+.button.cc-jumbo-button.cc-jumbo-white.hero-trailer {
+  font-size: 20px;
+  font-weight: 400;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  animation: subtle-pulse 3s ease-in-out infinite;
+}
 
+.button.cc-jumbo-button.cc-jumbo-white.hero-trailer:hover {
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+  letter-spacing: 6px;
+}
+
+@keyframes subtle-pulse {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    transform: scale(1);
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    transform: scale(1.02);
+  }
+}
+
+/* Modern "fever dream" navigation hover effects */
+.navigation-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.navigation-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.navigation-item:hover::before {
+  left: 100%;
+}
+
+.navigation-item:hover {
+  background-color: var(--white);
+  opacity: 1;
+  letter-spacing: 5px;
+  animation: glitch-nav 0.3s ease-in-out;
+  text-shadow:
+    2px 2px 0 rgba(255, 0, 255, 0.2),
+    -2px -2px 0 rgba(0, 255, 255, 0.2);
+}
+
+.navigation-item:not(.logo):hover {
+  transform: scale(1.05) skewX(-2deg);
+}
+
+@keyframes glitch-nav {
+  0%, 100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(2px, -2px);
+  }
+  60% {
+    transform: translate(-2px, -2px);
+  }
+  80% {
+    transform: translate(2px, 2px);
+  }
+}
+
+/* Add color shift effect on logo hover */
+.navigation-item.logo:hover .kllogo {
+  filter: hue-rotate(15deg) brightness(1.2);
+  transition: filter 0.3s ease;
+}
+
+
+
+/* Animated light flare effects */
+@keyframes flareFloat {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 0.8;
+    filter: brightness(1);
+  }
+  25% {
+    transform: translate(-30px, 20px);
+    opacity: 0.95;
+    filter: brightness(1.2);
+  }
+  50% {
+    transform: translate(20px, -15px);
+    opacity: 0.7;
+    filter: brightness(0.9);
+  }
+  75% {
+    transform: translate(-15px, -25px);
+    opacity: 0.9;
+    filter: brightness(1.1);
+  }
+}
+
+@keyframes flareFloat2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.75;
+    filter: brightness(1);
+  }
+  30% {
+    transform: translate(25px, -20px) scale(1.05);
+    opacity: 0.9;
+    filter: brightness(1.15);
+  }
+  60% {
+    transform: translate(-20px, 25px) scale(0.98);
+    opacity: 0.65;
+    filter: brightness(0.85);
+  }
+  85% {
+    transform: translate(15px, 10px) scale(1.02);
+    opacity: 0.85;
+    filter: brightness(1.05);
+  }
+}
+
+@keyframes flareFloat3 {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 0.7;
+    filter: brightness(1) blur(0px);
+  }
+  20% {
+    transform: translate(-25px, -30px);
+    opacity: 0.85;
+    filter: brightness(1.1) blur(2px);
+  }
+  45% {
+    transform: translate(30px, 15px);
+    opacity: 0.6;
+    filter: brightness(0.8) blur(0px);
+  }
+  70% {
+    transform: translate(-15px, 20px);
+    opacity: 0.8;
+    filter: brightness(1.05) blur(1px);
+  }
+  90% {
+    transform: translate(10px, -10px);
+    opacity: 0.75;
+    filter: brightness(0.95) blur(0px);
+  }
+}
+
+/* About page 3D hover effect */
+.contentcontainer.about {
+  transition: all 0.5s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.contentcontainer.about .textwrap {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.contentcontainer.about:hover .textwrap {
+  transform: translateZ(40px) scale(1.02);
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+.contentcontainer.about:hover .title-small {
+  transform: translateZ(60px);
+  text-shadow: 0 15px 40px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.contentcontainer.about:hover .paragraph-bigger {
+  transform: translateZ(30px);
+}
+
+/* Blur background when hovering over about section */
+.sectionbackground.about {
+  transition: filter 0.5s ease;
+}
+
+.contentcontainer.about:hover ~ .sectionbackground.about {
+  filter: blur(8px) brightness(0.7);
+}
+
+/* Hide all CMS "No items found" messages */
+.w-dyn-empty {
+  display: none !important;
+}
